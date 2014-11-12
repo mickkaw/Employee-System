@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = ViewBag.Message;
+}
+<div style="min-width: 800px; font-family: Arial; padding: 10px 20px 20px 20px; border: 0px solid blue;">
+
+	@* User Dropdown and Message Box *@
+	<div style="width: 360px;">
+        <div class="BoxCombo">
+            <div class="BoxLabel"><div class="TLabel">Current User:</div></div>
+            <div class="TextBoxValue">
+                <div class="TValue">
+                    <select id="Users"></select>
+                </div>
+            </div>
+        </div>
+	</div>
+    <div class="TextBoxValue">
+        <div class="TValue">
+            <div id="ErrMsg" style="width: 360px; max-width: 720px; padding: 8px 0px 10px 10px;"></div>
+        </div>
+    </div>
+
+	@* Employee Table Window *@
+	<div class="ClearFloat" />
+	<div id="EmpListPanel">
+		<table id="EmployeeTable"></table>
+		<div id="EmpScroll"></div>
+		<div id="LoadingEmps"></div>
+		<div style="padding-top: 20px; text-align: center;">
+			<button id="NewEmp" type="submit" style="width: 140px; font-size: 0.7em;">New Employee</button>
+			<button id="DelEmp" type="submit" style="width: 140px; font-size: 0.7em;">Delete Employee</button>
+		</div>
+	</div>
+
+	@* Employee Editor Window *@
+	<div id="EmpEditor">
+		<div style="border: 0px solid green; padding-bottom: 20px;">
+
+			@* Employee ID *@
+			<div class="BoxCombo">
+				<div class="BoxLabel"><div class="TLabel">Emp ID:</div></div>
+				<div class="TextBoxValue">
+					<div class="TValue" style="padding-left: 4px;"><span id="EmpID"></span></div>
+				</div>
+			</div>
+
+			@* First Name *@
+			<div class="BoxCombo">
+				<div class="BoxLabel"><div class="TLabel">First Name:</div></div>
+				<div class="TextBoxValue"><div class="TValue"><input id="FName" /></div></div>
+			</div>
+
+			@* Middle Initial *@
+			<div class="BoxCombo">
+				<div class="BoxLabel"><div class="TLabel">Mid Init:</div></div>
+				<div class="TextBoxValue"><div class="TValue"><input id="MName" /></div></div>
+			</div>
+
+			@* Last Name *@
+			<div class="BoxCombo">
+				<div class="BoxLabel"><div class="TLabel">Last Name:</div></div>
+				<div class="TextBoxValue"><div class="TValue"><input id="LName" /></div></div>
+			</div>
+
+			@* Email *@
+			<div class="BoxCombo">
+				<div class="BoxLabel"><div class="TLabel">Email:</div></div>
+				<div class="TextBoxValue"><div class="TValue"><input id="Email" /></div></div>
+			</div>
+
+			@* Job Code Dropdown *@
+			<div class="BoxCombo">
+				<div class="BoxLabel"><div class="TLabel">Job Code:</div></div>
+				<div class="TextBoxValue">
+					<div class="TValue">
+						<select id="JobCode"></select>
+					</div>
+				</div>
+			</div>
+
+			@* Location Dropdown *@
+			<div class="BoxCombo">
+				<div class="BoxLabel"><div class="TLabel">Location:</div></div>
+				<div class="TextBoxValue">
+					<div class="TValue">
+						<select id="Location"></select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		@* Employee Phone List *@
+		<div style="border: 0px solid red; padding-top: 5px;">
+
+			@* Phone Title and AddPhone Button*@
+			<div style="font-family: Arial; font-size: 0.8em; font-weight: bold; padding-bottom: 5px;">
+				<div style="height: 20px;">
+					<div class="BoxCombo" style="width: 100%;">
+						<div class="BoxLabel" style="vertical-align: bottom;">
+							<div class="TLabel" style="float: left; text-align: left; font-size: 0.85em;">Phones</div>
+						</div>
+						<div class="TextBoxValue">
+							<div class="TValue" style="float: right; padding-right: 5px;">
+								<button id="AddPhn" type="submit" style="width: 90px; font-size: 0.8em;">Add Phone</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			@* Phone Table *@
+			<div style="margin-top: 3px;">
+				<table id="PhoneTable" cellspacing="0" cellpadding="1" border="1" style="width: 100%; font-size: 0.7em;">
+					<tr style="height: 10px;">
+						<th>Type</th>
+						<th>Number</th>
+						<th>Ext</th>
+						<th>Primary</th>
+					</tr>
+					<tr>
+						<td>Work</td>
+						<td>3439821093</td>
+						<td>5903</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Cell</td>
+						<td>5904342293</td>
+						<td></td>
+						<td>X</td>
+					</tr>
+					<tr>
+						<td>Home</td>
+						<td>5903234934</td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		@* Employe Save and Cancel Buttons *@
+		<div style="height: 24px; width: 100%; padding-top: 20px; text-align: center;">
+			<div style="">
+				<div style="width: 70%; margin: 0 auto; height: 24px;">
+					<button id="SavEmp" type="submit" style="float: left; width: 110px; font-size: 0.68em;">Save Employee</button>
+					<button id="CanEmp" type="submit" style="float: right; width: 110px; font-size: 0.7em;">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
